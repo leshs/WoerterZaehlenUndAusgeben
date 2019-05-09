@@ -15,11 +15,10 @@ namespace WoerterZaehlenUndAusgeben
             string ausgabeFile = args[1];
             List<string> woerterListe = new List<string>();
             List<int> zaehlListe = new List<int>();
-            ReadList(eingabeFile, woerterListe, zaehlListe);
-            PrintList();
+            ReadList(eingabeFile, ausgabeFile, woerterListe, zaehlListe);
     }
 
-        public static void ReadList(string file, List<string> woerterListe, List<int> zaehlListe)
+        public static void ReadList(string file, string ausgabeFile, List<string> woerterListe, List<int> zaehlListe)
         {
             StreamReader reader = new StreamReader(file);
             string wort;
@@ -36,6 +35,7 @@ namespace WoerterZaehlenUndAusgeben
                     zaehlListe[position]++;
                 }
             }
+            PrintList(ausgabeFile, woerterListe, zaehlListe);
         }
 
         public static string AlterString(string wort)
@@ -43,9 +43,11 @@ namespace WoerterZaehlenUndAusgeben
             wort.ToLower();
             string[] umlaute = { "ä", "ö", "ü" };
             string[] umgewandelt = { "ae", "oe", "ue" };
-            for(int i = 0; i < 3; i++)
-            {
-                wort.Replace(umlaute[i], umgewandelt[i]);
+            if (wort.Contains("ä") || wort.Contains("ö") || wort.Contains("ü"))) {
+                for (int i = 0; i < 3; i++)
+                {
+                    wort.Replace(umlaute[i], umgewandelt[i]);
+                }
             }
             return wort;
         }
@@ -53,6 +55,7 @@ namespace WoerterZaehlenUndAusgeben
         public static void PrintList(string file, List<string> woerterListe, List<int> zaehlerListe)
         {
             StreamWriter writer = new StreamWriter(file);
+            writer.WriteLine("hkhkJ");
             for(int i = 0; i < woerterListe.Count; i++)
             {
                 writer.WriteLine(woerterListe[i] + " " + zaehlerListe[i]);
