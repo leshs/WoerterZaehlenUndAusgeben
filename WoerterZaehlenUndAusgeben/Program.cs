@@ -51,9 +51,7 @@ namespace WoerterZaehlenUndAusgeben
                 {
                     wortTemp = wortTemp.Replace(umlaute[i], umgewandelt[i]);
                 }
-
                 wortFinal = wortTemp;
-            
             return wortFinal;
         }
 
@@ -64,7 +62,6 @@ namespace WoerterZaehlenUndAusgeben
              {
                  writer.WriteLine(woerterListe[i] + " " + zaehlerListe[i]);
              }
-             
             writer.Close();
             writer.Dispose();
         }
