@@ -11,8 +11,11 @@ namespace WoerterZaehlenUndAusgeben
     {
         static void Main(string[] args)
         {
-            string eingabeFile = args[0];
-            string ausgabeFile = args[1];
+            //string eingabeFile = args[0];
+            //string ausgabeFile = args[1];
+            string eingabeFile = "C:\\Users\\lschubert\\source\\repos\\WoerterZaehlenUndAusgeben\\woerter.txt";
+            string ausgabeFile = "C:\\Users\\lschubert\\source\\repos\\WoerterZaehlenUndAusgeben\\ergebnis.txt";
+            //string eingabeFile = "C:\\Users\\lschubert\\Documents"
             List<string> woerterListe = new List<string>();
             List<int> zaehlListe = new List<int>();
             ReadList(eingabeFile, ausgabeFile, woerterListe, zaehlListe);
@@ -20,18 +23,18 @@ namespace WoerterZaehlenUndAusgeben
 
         public static void ReadList(string file, string ausgabeFile, List<string> woerterListe, List<int> zaehlListe)
         {
-            StreamReader reader = new StreamReader(file);
+            StreamReader reader = new StreamReader(file, System.Text.Encoding.Default);
             string wort;
             while((wort = reader.ReadLine()) != null)
             {
-                wort = AlterString(wort);
-                if(!woerterListe.Contains(wort))
+               string wortGeändert = AlterString(wort);
+                if(!woerterListe.Contains(wortGeändert))
                 {
-                    woerterListe.Add(wort);
+                    woerterListe.Add(wortGeändert);
                     zaehlListe.Add(1);
                 } else
                 {
-                    int position = woerterListe.IndexOf(wort);
+                    int position = woerterListe.IndexOf(wortGeändert);
                     zaehlListe[position]++;
                 }
             }
@@ -40,26 +43,30 @@ namespace WoerterZaehlenUndAusgeben
 
         public static string AlterString(string wort)
         {
-            wort.ToLower();
+           string wortTemp =  wort.ToLower();
+            string wortFinal = null;
             string[] umlaute = { "ä", "ö", "ü" };
             string[] umgewandelt = { "ae", "oe", "ue" };
-            if (wort.Contains("ä") || wort.Contains("ö") || wort.Contains("ü"))) {
                 for (int i = 0; i < 3; i++)
                 {
-                    wort.Replace(umlaute[i], umgewandelt[i]);
+                    wortTemp = wortTemp.Replace(umlaute[i], umgewandelt[i]);
                 }
-            }
-            return wort;
+
+                wortFinal = wortTemp;
+            
+            return wortFinal;
         }
 
         public static void PrintList(string file, List<string> woerterListe, List<int> zaehlerListe)
         {
             StreamWriter writer = new StreamWriter(file);
-            writer.WriteLine("hkhkJ");
-            for(int i = 0; i < woerterListe.Count; i++)
-            {
-                writer.WriteLine(woerterListe[i] + " " + zaehlerListe[i]);
-            }
+             for(int i = 0; i < woerterListe.Count; i++)
+             {
+                 writer.WriteLine(woerterListe[i] + " " + zaehlerListe[i]);
+             }
+             
+            writer.Close();
+            writer.Dispose();
         }
     }
 }

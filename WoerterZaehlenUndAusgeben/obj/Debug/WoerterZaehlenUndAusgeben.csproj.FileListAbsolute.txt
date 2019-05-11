@@ -1,0 +1,7 @@
+C:\Users\lschubert\source\repos\WoerterZaehlenUndAusgeben\WoerterZaehlenUndAusgeben\obj\Debug\WoerterZaehlenUndAusgeben.csprojAssemblyReference.cache
+C:\Users\lschubert\source\repos\WoerterZaehlenUndAusgeben\WoerterZaehlenUndAusgeben\obj\Debug\WoerterZaehlenUndAusgeben.csproj.CoreCompileInputs.cache
+C:\Users\lschubert\source\repos\WoerterZaehlenUndAusgeben\WoerterZaehlenUndAusgeben\bin\Debug\WoerterZaehlenUndAusgeben.exe.config
+C:\Users\lschubert\source\repos\WoerterZaehlenUndAusgeben\WoerterZaehlenUndAusgeben\bin\Debug\WoerterZaehlenUndAusgeben.exe
+C:\Users\lschubert\source\repos\WoerterZaehlenUndAusgeben\WoerterZaehlenUndAusgeben\bin\Debug\WoerterZaehlenUndAusgeben.pdb
+C:\Users\lschubert\source\repos\WoerterZaehlenUndAusgeben\WoerterZaehlenUndAusgeben\obj\Debug\WoerterZaehlenUndAusgeben.exe
+C:\Users\lschubert\source\repos\WoerterZaehlenUndAusgeben\WoerterZaehlenUndAusgeben\obj\Debug\WoerterZaehlenUndAusgeben.pdb
